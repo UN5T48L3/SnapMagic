@@ -1,9 +1,12 @@
 
 ---
 
+During my OSCP course times I've break system and took my time to recover.
+After I search Google, I couldn't find any good tool that automates this process so here is a simple tool that will help you to not lose your VirtualBox states and save your time.
+
 # Daily Snapshot Automation for VirtualBox
 
-This PowerShell script automates the creation of daily backups for a VirtualBox VM, removing older snapshots to conserve space, and ensuring that only snapshots with the name format "DailyBackup_" are deleted if they are older than 3 days.
+This PowerShell script automates the creation of daily backups for a VirtualBox VM, removing older snapshots to conserve space, and ensuring that only snapshots with the name format "DailyBackup_" are deleted if they are older than 2 days.
 
 ## Requirements
 - Windows operating system

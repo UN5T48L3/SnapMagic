@@ -31,7 +31,7 @@ function Delete-Snapshot {
 $snapshots = & $VBoxManagePath snapshot $VMName list --machinereadable | Select-String -Pattern 'SnapshotName="DailyBackup_' | ForEach-Object { $_.ToString().Split('=')[1].Trim('"') }
 
 # Delete snapshots older than 3 days
-$cutOffDate = (Get-Date).AddDays(-2)
+$cutOffDate = (Get-Date).AddDays(-3)
 foreach ($snapshot in $snapshots) {
     $snapshotDate = [DateTime]::ParseExact($snapshot.Split('_')[1], "dd-MM-yyyy-HH-mm", $null)
     if ($snapshotDate -lt $cutOffDate) {
