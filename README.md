@@ -3,7 +3,7 @@
 
 # Daily Snapshot Automation for VirtualBox
 
-This script automates the process of creating a daily snapshot for a VirtualBox virtual machine and deleting any existing snapshots to save disk space. It is designed to be used with Windows operating systems.
+This PowerShell script automates the creation of daily backups for a VirtualBox VM, removing older snapshots to conserve space, and ensuring that only snapshots with the name format "DailyBackup_" are deleted if they are older than 3 days.
 
 ## Requirements
 - Windows operating system
@@ -11,7 +11,7 @@ This script automates the process of creating a daily snapshot for a VirtualBox 
 - PowerShell
 
 ## Usage
-1. Download or clone the repository to your local machine.
+1. Download or clone the repository to your Windows Desktop.
 2. Edit the `DailySnapshot.ps1` file:
    - Replace `$VMName` with your virtual machine's name.
    - Update `$VBoxManagePath` with the correct path to `VBoxManage.exe` if it's different on your system.
@@ -19,14 +19,15 @@ This script automates the process of creating a daily snapshot for a VirtualBox 
    ```powershell
    .\DailySnapshot.ps1
    ```
-4. If you want to schedule the script to run daily, follow these steps:
-   - Open Task Scheduler.
-   - Import the `DailySnap.xml` file included in the repository:
-     - Right-click on "Task Scheduler Library" and select "Import Task..."
-     - Browse to the location of the `DailySnap.xml` file and select it.
-     - Click "Open" to import the task.
-   - Edit the imported task:
-     - Double-click on the imported task to open its properties.
-     - Go to the "Actions" tab and edit the "Start a program" action to specify the correct path to PowerShell.exe and the `DailySnapshot.ps1` script.
+
+## If you want to schedule the script to run daily, follow these steps:
+1. Open Task Scheduler.
+2. Import the `DailySnap.xml` file included in the repository:
+   - Right-click on "Task Scheduler Library" and select "Import Task..."
+   - Browse to the location of the `DailySnap.xml` file and select it.
+   - Click "Open" to import the task.
+3. Edit the imported task:
+   - Double-click on the imported task to open its properties.
+   - Go to the "Actions" tab and edit the "Start a program" action to specify the correct path to PowerShell.exe and the `run.bat` script.
    - Click "OK" to save the changes.
 ---
