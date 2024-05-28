@@ -29,8 +29,4 @@ This PowerShell script automates the creation of daily backups for a VirtualBox 
    - Right-click on "Task Scheduler Library" and select "Import Task..."
    - Browse to the location of the `DailySnap.xml` file and select it.
    - Click "Open" to import the task.
-3. Edit the imported task:
-   - Double-click on the imported task to open its properties.
-   - Go to the "Actions" tab and edit the "Start a program" action to specify the correct path to PowerShell.exe and the `run.bat` script.
-   - Click "OK" to save the changes.
 ---
