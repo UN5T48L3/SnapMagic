@@ -1,4 +1,3 @@
-Tabii ki, işte ingilizce bir README dosyası örneği:
 
 ---
 
